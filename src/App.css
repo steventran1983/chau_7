@@ -1,3 +1,701 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+/*   ----- Imports  -----  */
+/* Add fonts from the app's server 
+    @font-face {                
+      font-family: 'FontName';
+      src: url('FontName.woff2') format('woff2');
+    } 
+    ...or hosted services like Google Fonts 
+    @import url(//fonts.googleapis.com/css?family=Font+Name);
+  */
+
+/* @import 'node_modules/modern-normalize/modern-normalize.css'; */
+/* npm install modern-normalize
+          Resets elements for browser consistency.  
+          https://www.npmjs.com/package/modern-normalize
+        */
+
+/* Component-specific stylesheets, if any. 
+    @import "component1.css";   
+  */
+
+@import "~react-image-gallery/styles/css/image-gallery.css";
+/*   ----- Variables  -----  */
+:root {
+  --oceanblue-color: #0275d8;
+  --oceanblue-medium: #3d95e0;
+  --oceanblue-light: #79b8ed;
+  --oceanblue-super-light: #c8e2f7;
+  --greyscale-color: #e8e8e8fc;
+  --greyscale-black-color: #0e1e2b;
+  --light-orange-color: #f0ad4e;
+  --deep-orange-color: #f75846;
+  --green-custom-color: #29ba57;
+  --super-light-white: #f0f2f1;
+  --shadow-red-color: #999;
+  --red-super-: #f5164e;
+  --pale-green-color: #dff7ea;
+  --gold-color: #fcc026;
+  --teal-color: #39cccc;
+  --oceanblue-normal: #81cef7;
+
+  /* #f75846, #FA8072, #40e0d085, #f5eabc, #faa2ca,#E9F4FF, #FFC6C6, #BDFFFD, #3B75A9; */
+  --custom-embellishment-name: ;
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body {
+  /* Can alternatively define in html {} or :root {} */
+
+  /* border:5px solid #f5eabc; */
+  background-image: url(./images/vitruvian-park.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--greyscale-black-color);
+  font-family: sans-serif;
+  /* Define with at least one font name and its related generic family name.*/
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/*  ----- Page layout blocks -----  */
+header {
+  color: var(--oceanblue-color);
+  /* background-color: #f75846; */
+  /* background-color:#f5eabc; */
+  margin-top: 0;
+  /* height: 16px; */
+  /* margin: 100px; */
+  /* padding: 50px;
+    border: 20px; */
+}
+
+.header {
+  background-color: var(--oceanblue-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0.5rem; */
+}
+
+.main {
+  height: 100vh;
+}
+
+div#myContact.main {
+  background-color: #0275d8;
+}
+
+main {
+  /* color:grey; 
+    background-color:#f75846; */
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  background-color: var(--greyscale-color);
+  padding: 2rem;
+  width: 90%;
+  height: 100%;
+}
+
+article {
+  margin-top: 1rem;
+}
+
+#topic1 {
+}
+
+#topic2 {
+}
+
+div {
+}
+
+aside {
+}
+
+.gallary-image {
+  width: 400px;
+  height: 400px;
+  border: 2px solid var(--greyscale-color);
+  margin-bottom: 1rem;
+}
+
+.student-name {
+  font-size: 1.5rem;
+  color: var(--greyscale-color);
+  font-weight: bold;
+  margin-left: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+nav {
+  padding: 1rem;
+
+  /* border:50px;
+    padding:20px;
+    margin: 10px; */
+}
+
+p {
+  line-height: 1.5rem;
+}
+.nav-button {
+  color: var(--greyscale-black-color);
+  border: 2px solid var(--greyscale-color);
+  text-align: center;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--light-orange-color);
+}
+
+footer {
+  margin-top: auto;
+  background-color: var(--oceanblue-color);
+  padding: 0.5rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* color:#3B75A9;
+    background-color:#FFC6C6;
+    width: 500px;
+    margin: auto;
+    padding: 50px;
+    border: 10px; */
+}
+
+nav a {
+  /* background-color: #BDFFFD;
+    border:2px solid #f75846;
+    padding: 20px;
+    margin: 10px; */
+}
+
+nav a:hover {
+  background-color: var(--deep-orange-color);
+  transition: all 0.5s ease-in-out;
+}
+
+.browserButton:hover {
+  background-color: var(--light-orange-color);
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 10px 0 var(--shadow-red-color);
+}
+.contact {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  /* align-items: center; */
+}
+
+.contact-container {
+  background-color: var(--oceanblue-super-light);
+
+  justify-content: center;
+  width: 50%;
+  /* height: 500px; */
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border: 1px solid var(--greyscale-black-color);
+  border-radius: 1rem;
+  margin-top: 5rem;
+}
+
+/* ----- Anchors ----- Text links */
+a {
+  text-decoration: none;
+}
+
+.feedback-container {
+  width: 80%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.feedback {
+  width: 50%;
+  /* height: 200px; */
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: var(--super-light-white);
+}
+
+/* assigment 7  */
+.order-button {
+  font-size: 1.5rem;
+  color: #0275d8;
+}
+.product-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+a:link {
+}
+
+a:hover {
+}
+
+a:active {
+}
+
+a:visited {
+}
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+
+/*  -----  Typography  ----- */
+p {
+}
+
+br {
+}
+
+ol,
+ul,
+dl {
+}
+
+li {
+}
+
+dt {
+  padding: 1rem;
+}
+
+dd {
+  padding-left: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+abbr {
+}
+
+acronym {
+}
+
+address {
+}
+
+blockquote {
+}
+
+q {
+}
+
+cite {
+}
+
+em {
+}
+
+hr {
+}
+
+mark {
+}
+
+s {
+}
+
+span {
+}
+
+strong {
+}
+
+sub {
+}
+
+sup {
+}
+
+time {
+}
+
+/*  ----- Coding or instructional typography ----- */
+pre {
+}
+
+code {
+}
+
+kbd {
+}
+
+samp {
+}
+
+var {
+}
+
+del {
+}
+
+ins {
+}
+
+/*  ----- Table ----- */
+table {
+  width: 50%;
+  background-color: var(--oceanblue-super-light);
+  border: 1px solid;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+caption {
+  background-color: var(--deep-orange-color);
+  border: 1px solid;
+  font-size: 25px;
+  padding: 1rem;
+}
+
+thead {
+}
+
+tbody {
+}
+
+tfoot {
+}
+
+tr {
+  border: 1px solid;
+  background-color: var(--gold-color);
+}
+
+/* Need modify the color  */
+tr:nth-child(even) td {
+  background-color: var(--super-light-white);
+  text-align: center;
+}
+
+tr:nth-child(odd) td {
+  background-color: var(--oceanblue-normal);
+  text-align: center;
+}
+
+.td-image {
+  border-radius: 50%;
+  border: 1px solid var(--pale-green-color);
+}
+
+.staff-container {
+  text-align: center;
+}
+
+.staff-table {
+  display: flex;
+  justify-content: center;
+}
+
+th {
+  border: 1px solid;
+  padding: 1rem;
+}
+
+td {
+  border: 1px solid;
+  background-color: var(--super-light-white);
+  padding: 0.5rem;
+}
+
+.staff-caption {
+  padding: 1rem;
+}
+
+td:nth-child(1) {
+}
+
+colgroup {
+}
+
+data {
+}
+
+datalist {
+}
+
+/*  ----- Form ----- */
+
+form {
+  background-color: var(--light-orange-color);
+  padding: 2rem;
+  border: var(--oceanblue-color) 1px solid;
+}
+
+.form-center {
+  width: 500px;
+  background-color: var(--oceanblue-color);
+  box-shadow: 0 0 20px 0 var(--shadow-red-color);
+  top: 28%;
+  left: 50%;
+  bottom: 40%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+fieldset {
+  background-color: var(--greyscale-color);
+  color: var(--greyscale-black-color);
+  border: var(--deep-orange-color) 2px solid;
+  border-radius: 14px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 2px;
+}
+
+legend {
+  border: 2px solid var(--greyscale-black-color);
+  background-color: var(--light-orange-color);
+  margin: auto;
+  border-radius: 14px;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--greyscale-black-color);
+  font-size: 20px;
+}
+
+label {
+  color: var(--greyscale-black-color);
+  padding: 0;
+
+  display: inline-block;
+}
+input {
+  width: auto;
+  padding: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+button {
+  border-radius: 14px;
+  /* font-size: 12px; */
+  border: none;
+  background-color: var(--deep-orange-color);
+  color: var(--super-light-white);
+  width: 150px;
+  height: 50px;
+  box-shadow: 0 0 5px 0 var(--shadow-red-color);
+  margin: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+input:focus {
+  background-color: var(--deep-orange-color);
+}
+*::placeholder {
+  font-weight: bold;
+  color: var(--greyscale-black-color);
+}
+
+*:required {
+  background-color: var(--super-light-white);
+}
+
+label.required:after {
+  content: " *";
+  color: var(--red-super-);
+}
+output {
+}
+
+meter {
+}
+
+progress {
+}
+
+select {
+  background-color: var(--super-light-white);
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+#phone {
+  width: 90%;
+}
+
+optgroup {
+}
+
+option {
+}
+
+textarea {
+  height: 100px;
+  width: 80%;
+  padding: 1rem;
+  margin: 10px;
+  box-shadow: 0 0 10px 0 var(--shadow-red-color);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+/* ----- Media ----- */
+figure {
+  text-align: center;
+  width: 500px;
+}
+
+figcaption {
+}
+
+figure img {
+}
+
+svg {
+}
+
+picture {
+}
+
+source {
+}
+
+iframe {
+}
+
+video {
+}
+
+audio {
+}
+
+embed {
+}
+
+object {
+}
+
+/*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+/* .gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+} */
+
+.floatright {
+}
+
+.floatleft {
+}
+
+.center-middle {
+}
+
+.ten {
+}
+
+.twenty {
+}
+
+.thirty {
+}
+
+.forty {
+}
+
+.fifty {
+}
+
+.sixty {
+}
+
+.seventy {
+}
+
+.eighty {
+}
+
+.radius {
+}
+
+.circle {
+}
+
+.boxshadow {
+}
+
+.tshadow {
+}
+
+.gradient {
+}
+
+.shape {
+}
+
+@keyframes App-logo {
+}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (mix-width: 600px) {
+}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {
+}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {
+}
+
 .App {
   text-align: center;
 }
@@ -13,7 +711,7 @@
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,7 +720,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
